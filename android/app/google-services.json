@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "85511889110",
+    "firebase_url": "https://mindchatgpt-444df-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mindchatgpt-444df",
+    "storage_bucket": "mindchatgpt-444df.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85511889110:android:13363ae023c568252ba977",
+        "android_client_info": {
+          "package_name": "app.astronath"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaRQmfeBCZQbLIidn7bZQsGecQnuTBVi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85511889110:android:52cf6fdf1e7f36562ba977",
+        "android_client_info": {
+          "package_name": "com.clothes.ecom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaRQmfeBCZQbLIidn7bZQsGecQnuTBVi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,37 @@
+rules_version = '2';
+
+// Firebase Storage rules: public read for catalog assets, authenticated
+// writes only into the user's own folders, with size/type limits.
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Catalog assets are uploaded by admins via the console / future panel.
+    match /products/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /banners/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /categories/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Review photos: any signed-in user may upload small images.
+    match /reviews/{productId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+        && request.resource.size < 3 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    // Profile photos: owner only.
+    match /profiles/{uid}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid
+        && request.resource.size < 3 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

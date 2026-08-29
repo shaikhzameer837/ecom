@@ -1,0 +1,127 @@
+{
+  "categories": {
+    "men": { "name": "Men", "image": "", "parentId": "", "sortOrder": 0,
+      "subcategories": {
+        "men_tshirts": { "name": "T-Shirts", "sortOrder": 0 },
+        "men_shirts": { "name": "Shirts", "sortOrder": 1 },
+        "men_jeans": { "name": "Jeans", "sortOrder": 2 }
+      }
+    },
+    "women": { "name": "Women", "image": "", "parentId": "", "sortOrder": 1,
+      "subcategories": {
+        "women_dresses": { "name": "Dresses", "sortOrder": 0 },
+        "women_tops": { "name": "Tops", "sortOrder": 1 },
+        "women_sarees": { "name": "Sarees", "sortOrder": 2 }
+      }
+    },
+    "kids": { "name": "Kids", "image": "", "parentId": "", "sortOrder": 2,
+      "subcategories": {
+        "kids_boys": { "name": "Boys", "sortOrder": 0 },
+        "kids_girls": { "name": "Girls", "sortOrder": 1 }
+      }
+    },
+    "footwear": { "name": "Footwear", "image": "", "parentId": "", "sortOrder": 3,
+      "subcategories": {
+        "foot_sneakers": { "name": "Sneakers", "sortOrder": 0 },
+        "foot_sandals": { "name": "Sandals", "sortOrder": 1 }
+      }
+    },
+    "accessories": { "name": "Accessories", "image": "", "parentId": "", "sortOrder": 4,
+      "subcategories": {
+        "acc_watches": { "name": "Watches", "sortOrder": 0 },
+        "acc_bags": { "name": "Bags", "sortOrder": 1 }
+      }
+    }
+  },
+
+  "products": {
+    "p_classic_tee": {
+      "name": "Classic Cotton Crew Neck T-Shirt",
+      "brand": "UrbanWeave",
+      "categoryId": "men",
+      "subcategoryId": "men_tshirts",
+      "price": 499,
+      "mrp": 999,
+      "images": [],
+      "colors": ["Black", "White", "Navy"],
+      "sizes": ["S", "M", "L", "XL"],
+      "stock": 40,
+      "rating": 4.3,
+      "ratingCount": 128,
+      "soldCount": 950,
+      "createdAt": 1751328000000,
+      "isFeatured": true,
+      "isBestSeller": true,
+      "flashSaleEndsAt": 0,
+      "keywords": ["tshirt", "tee", "cotton", "men", "casual"]
+    },
+    "p_floral_dress": {
+      "name": "Floral Print A-Line Midi Dress",
+      "brand": "Meera",
+      "categoryId": "women",
+      "subcategoryId": "women_dresses",
+      "price": 1299,
+      "mrp": 2199,
+      "images": [],
+      "colors": ["Teal", "Maroon"],
+      "sizes": ["XS", "S", "M", "L"],
+      "stock": 18,
+      "rating": 4.6,
+      "ratingCount": 87,
+      "soldCount": 430,
+      "createdAt": 1751932800000,
+      "isFeatured": true,
+      "isBestSeller": false,
+      "flashSaleEndsAt": 0,
+      "keywords": ["dress", "floral", "midi", "women"]
+    }
+  },
+
+  "productDetails": {
+    "p_classic_tee": {
+      "description": "Everyday essential crew neck tee in 100% combed cotton. Pre-shrunk, breathable and built to keep its shape wash after wash.",
+      "specifications": {
+        "Fabric": "100% Combed Cotton",
+        "Fit": "Regular",
+        "Sleeve": "Half Sleeve",
+        "Wash Care": "Machine wash cold"
+      },
+      "offers": [
+        "Flat 10% off on orders above ₹1499 with code STYLE10",
+        "Free delivery on orders above ₹999"
+      ]
+    }
+  },
+
+  "banners": {
+    "b_summer": {
+      "image": "",
+      "title": "Summer Sale",
+      "target": "category",
+      "targetId": "men",
+      "sortOrder": 0,
+      "active": true
+    }
+  },
+
+  "coupons": {
+    "STYLE10": {
+      "type": "percent",
+      "value": 10,
+      "minOrderValue": 1499,
+      "maxDiscount": 300,
+      "expiresAt": 0,
+      "active": true,
+      "description": "10% off on orders above ₹1499"
+    },
+    "FLAT100": {
+      "type": "flat",
+      "value": 100,
+      "minOrderValue": 799,
+      "maxDiscount": 0,
+      "expiresAt": 0,
+      "active": true,
+      "description": "₹100 off on orders above ₹799"
+    }
+  }
+}

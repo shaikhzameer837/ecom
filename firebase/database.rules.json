@@ -1,0 +1,124 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "phone": { ".validate": "newData.isString() && newData.val().length <= 16" },
+        "name": { ".validate": "newData.isString() && newData.val().length <= 80" },
+        "email": { ".validate": "newData.isString() && newData.val().length <= 120" }
+      }
+    },
+
+    "products": {
+      ".read": true,
+      ".indexOn": ["categoryId", "subcategoryId", "createdAt", "isFeatured", "isBestSeller", "flashSaleEndsAt"],
+      "$productId": {
+        "rating": { ".write": "auth != null" },
+        "ratingCount": { ".write": "auth != null" }
+      }
+    },
+
+    "productDetails": { ".read": true },
+    "categories": { ".read": true },
+    "banners": { ".read": true },
+    "coupons": { ".read": "auth != null" },
+
+    "carts": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "$itemId": {
+          "quantity": { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 10" }
+        }
+      }
+    },
+
+    "savedForLater": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "wishlists": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "orders": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "$orderId": {
+          ".write": "auth != null && auth.uid === $uid && (!data.exists() || newData.child('status').val() === 'cancelled' || newData.child('status').val() === 'returnRequested' || newData.child('status').val() === 'confirmed')",
+          "total": { ".validate": "newData.isNumber() && newData.val() >= 0" }
+        }
+      }
+    },
+
+    "addresses": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "reviews": {
+      ".read": true,
+      "$productId": {
+        "$reviewId": {
+          ".write": "auth != null && (!data.exists() && newData.child('uid').val() === auth.uid || data.exists() && newData.child('helpfulCount').isNumber())",
+          "rating": { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 5" },
+          "text": { ".validate": "!newData.exists() || (newData.isString() && newData.val().length <= 1000)" }
+        }
+      }
+    },
+
+    "reviewVotes": {
+      "$reviewId": {
+        "$uid": {
+          ".read": "auth != null && auth.uid === $uid",
+          ".write": "auth != null && auth.uid === $uid && !data.exists()"
+        }
+      }
+    },
+
+    "notifications": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "recentlyViewed": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "searchHistory": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "trendingSearches": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ".value"
+    },
+
+    "admins": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid"
+      }
+    }
+  }
+}

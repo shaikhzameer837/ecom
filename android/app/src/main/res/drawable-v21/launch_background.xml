@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Native launch screen (API 21+) shown before Flutter initializes. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/app_logo" />
+    </item>
+</layer-list>
